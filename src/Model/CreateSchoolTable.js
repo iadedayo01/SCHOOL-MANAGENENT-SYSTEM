@@ -1,0 +1,9 @@
+export const createSchoolTable = `
+CREATE TABLE IF NOT EXISTS schools (
+id SERIAL PRIMARY KEY,
+name VARCHAR(200) NOT NULL,
+address VARCHAR(200) NOT NULL,
+logo_url VARCHAR(255) NOT NULL,
+created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
