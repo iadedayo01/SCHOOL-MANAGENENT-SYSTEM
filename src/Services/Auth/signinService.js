@@ -47,6 +47,7 @@ export const signinService = async (req, res) => {
     //generate token
 
     const token = generateJwtToken(user.id, user.school_id, user.role);
+    
     console.log("get school id: ",user.school_id)
 
     return res.status(200).json({

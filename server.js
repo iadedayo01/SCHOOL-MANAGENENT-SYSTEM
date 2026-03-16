@@ -7,6 +7,7 @@ import authRoutes from "./src/routes/AUTH/auth.js"
 import userRoutes from "./src/routes/User.js"
 import teacherRoutes from "./src/routes/Admin/teacher.js"
 import departmentRoutes from "./src/routes/Admin/department.js"
+import subjectRoutes from "./src/routes/Admin/subject.js"
 
 dotenv.config()
 
@@ -30,6 +31,8 @@ app.use("/user", userRoutes);
 app.use("/teacher", teacherRoutes)
 
 app.use("/department", departmentRoutes)
+
+app.use("/subject", subjectRoutes)
 
 //https://localhost:PORT/auth/signup
 
