@@ -27,3 +27,8 @@ export const addPrefectsStatus = `
     ALTER TABLE prefects
     ADD COLUMN IF NOT EXISTS status VARCHAR(20) CHECK (status IN ('active', 'inactive'))
 `
+
+export const addTeacherSchoolId = `
+    ALTER TABLE teachers
+    ADD COLUMN IF NOT EXISTS school_id INT REFERENCES schools(id) ON DELETE CASCADE
+`

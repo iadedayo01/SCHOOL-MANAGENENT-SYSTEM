@@ -5,6 +5,8 @@ import { initDb } from "./src/config/db.js"
 // routes
 import authRoutes from "./src/routes/AUTH/auth.js"
 import userRoutes from "./src/routes/User.js"
+import teacherRoutes from "./src/routes/Admin/teacher.js"
+import departmentRoutes from "./src/routes/Admin/department.js"
 
 dotenv.config()
 
@@ -24,6 +26,10 @@ console.log("routes loaded")
 app.use("/auth", authRoutes);
 
 app.use("/user", userRoutes);
+
+app.use("/teacher", teacherRoutes)
+
+app.use("/department", departmentRoutes)
 
 //https://localhost:PORT/auth/signup
 

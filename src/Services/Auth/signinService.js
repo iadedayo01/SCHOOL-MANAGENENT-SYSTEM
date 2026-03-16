@@ -31,6 +31,8 @@ export const signinService = async (req, res) => {
     console.log("user is:", user)
     console.log(password, user.password)
 
+    console.log("user res",user)
+
     // check if password is correct
     const isMatch = await bcrypt.compare(password, user.password);
     console.log(isMatch)
@@ -44,7 +46,8 @@ export const signinService = async (req, res) => {
     // after passing all checks
     //generate token
 
-    const token = generateJwtToken(user.id, user.schoolId, user.role);
+    const token = generateJwtToken(user.id, user.school_id, user.role);
+    console.log("get school id: ",user.school_id)
 
     return res.status(200).json({
       message: "signin Successful",

@@ -2,7 +2,7 @@ import pg from "pg";
 
 import dotenv from "dotenv";
 import { createStudentTable } from "../Model/CreateStudentTable.js";
-import { addPrefectsStatus, alterAssignmentTable, alterPrefectsStatus, alterStudentTable, alterTeacherTable, removeStudentTable } from "../Model/AlterTables.js";
+import { addPrefectsStatus, addTeacherSchoolId, alterAssignmentTable, alterPrefectsStatus, alterStudentTable, alterTeacherTable, removeStudentTable } from "../Model/AlterTables.js";
 import { createSchoolTable } from "../Model/CreateSchoolTable.js";
 import { createAnnouncementTable } from "../Model/CreateAnnouncementTable.js";
 import { createDepartmentTable } from "../Model/CreateDepartmentTable.js";
@@ -76,7 +76,7 @@ export const initDb = async () => {
     await client.query(createPrefectsTable);
     console.log("Prefects table created successfully")
     // ALTER TABLES
-    await client.query(alterStudentTable);
+    // await client.query(alterStudentTable);
     console.log("student table altered successfully")
 
     await client.query(alterAssignmentTable);
@@ -85,14 +85,17 @@ export const initDb = async () => {
     await client.query(alterTeacherTable);
     console.log("Teacher table updated")
 
-    await client.query(addPrefectsStatus);
+    // await client.query(addPrefectsStatus);
     console.log("Prefect Status updated successfully")
 
+    await client.query(addTeacherSchoolId);
+    console.log("teachers school id updated")
+
     // Remove Student Table column
-    await client.query(removeStudentTable)
+    // await client.query(removeStudentTable)
     console.log("origin column removed successfully")
 
-    await client.query(alterPrefectsStatus);
+    // await client.query(alterPrefectsStatus);
     console.log("Status column removed successfully");
 
 
