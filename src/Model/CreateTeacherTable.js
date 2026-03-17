@@ -4,6 +4,8 @@ export const createTeachersTable = `
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     gender VARCHAR(10) CHECK (gender IN ('male', 'female')),
-    user_id INT REFERENCES users(id) ON DELETE CASCADE
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    school_id INT REFERENCES schools(id) ON DELETE CASCADE,
+    created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 `

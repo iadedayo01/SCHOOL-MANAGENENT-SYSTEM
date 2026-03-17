@@ -5,6 +5,7 @@ title VARCHAR(255) NOT NULL,
 content TEXT NOT NULL,
 teacher_id INT REFERENCES teachers(id) ON DELETE SET NULL,
 class_id INT REFERENCES classes(id) ON DELETE SET NULL,
-school_id INT REFERENCES schools(id) ON DELETE CASCADE
+school_id INT REFERENCES schools(id) ON DELETE CASCADE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 `

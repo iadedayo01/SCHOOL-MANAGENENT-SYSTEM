@@ -4,8 +4,8 @@ id SERIAL PRIMARY KEY,
 name VARCHAR(100) NOT NULL,
 code VARCHAR(10) NOT NULL,
 dept_id INT REFERENCES departments(id) ON DELETE SET NULL,
-school_id INT REFERENCES schools(id) ON DELETE CASCADE,
 status VARCHAR(10) DEFAULT 'active' CHECK (status IN ('active', 'inactive')),
+school_id INT REFERENCES schools(id) ON DELETE CASCADE,
 created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 `

@@ -8,6 +8,7 @@ import userRoutes from "./src/routes/User.js"
 import teacherRoutes from "./src/routes/Admin/teacher.js"
 import departmentRoutes from "./src/routes/Admin/department.js"
 import subjectRoutes from "./src/routes/Admin/subject.js"
+import studentRoutes from "./src/routes/Admin/student.js"
 
 dotenv.config()
 
@@ -34,11 +35,13 @@ app.use("/department", departmentRoutes)
 
 app.use("/subject", subjectRoutes)
 
+app.use("/student", studentRoutes)
+
 //https://localhost:PORT/auth/signup
 
 
 
 app.listen(port, () => {
     console.log(`My server is running at https://localhost:${port}`)
-    initDb()
+    
 })
