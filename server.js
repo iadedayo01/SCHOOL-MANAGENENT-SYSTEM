@@ -11,6 +11,7 @@ import subjectRoutes from "./src/routes/Admin/subject.js"
 import studentRoutes from "./src/routes/Admin/student.js"
 import announcementRoutes from "./src/routes/General/announcement.js"
 import classRoutes from "./src/routes/Admin/class.js"
+import prefectRoutes from "./src/routes/Admin/prefect.js"
 
 dotenv.config()
 
@@ -42,6 +43,8 @@ app.use("/student", studentRoutes)
 app.use("/announcement", announcementRoutes)
 
 app.use("/class", classRoutes)
+
+app.use("/prefect", prefectRoutes)
 
 //https://localhost:PORT/auth/signup
 
