@@ -11,7 +11,7 @@ export const createTeacherService = async (req, res) => {
 
     const schoolId = req.user.schoolId;
 
-    if ((!first_name, !last_name, !gender, !email)) {
+    if ((!first_name || !last_name || !gender || !email)) {
       return res.status(400).json({
         message: "All fields are required",
       });
